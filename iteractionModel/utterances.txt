@@ -1,0 +1,32 @@
+RecentMovies what are my recent movies
+RecentMovies my recent movies
+RecentMovies what're my recent movies
+RecentMovies what are my newest movies
+RecentMovies my newest movies
+RecentMovies what're my newest movies
+RecentMovies what are my new movies
+RecentMovies my new movies
+RecentMovies what're my new movies
+RecentMovies what are my latest movies
+RecentMovies my latest movies
+RecentMovies what're my latest movies
+
+
+Stats how many movies i have
+Stats how many movies do i have
+Stats what is my movie count
+Stats what my movie count is
+PlayMovie play {Title}
+PlayMovie play movie {Title}
+PauseMovie pause the movie
+PauseMovie pause
+UnPauseMovie unpause the movie
+UnPauseMovie unpause
+
+WhatToWatch what should I watch
+WhatToWatch what I should watch
+WhatToWatch for a movie to watch
+WhatToWatch pick a movie
+WhatToWatch pick me a movie
+WhatToWatch choose a movie
+WhatToWatch choose me a movie
