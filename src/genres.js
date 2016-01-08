@@ -18,7 +18,7 @@ var findMatch = function(name) {
 			}
 		}
 		return false;
-	})
+	});
 	
 	return matches.length ? matches[0] : "";
 };

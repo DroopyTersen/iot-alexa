@@ -1,28 +1,47 @@
 {
-  "intents": [{
+  "intents": [
+    {
       "intent": "RecentMovies"
     },
-     {
-       "intent": "Stats"
-     },
-     {
-       "intent": "PlayMovie",
-       "slots": [
-         { "name": "Title", "type": "Movie_Title" }
-       ]
-     },
-     {
-       "intent": "PauseMovie"
-     }, 
-     {
-       "intent": "UnPauseMovie"
-     },
-     {
-       "intent": "WhatToWatch",
-       "slots": [
-         { "name": "Genre", "type": "Movie_Genre" }
-       ]
-     },
+    {
+      "intent": "Stats"
+    },
+    {
+      "intent": "PlayMovie",
+      "slots": [
+        {
+          "name": "Title",
+          "type": "Movie_Title"
+        }
+      ]
+    },
+    {
+      "intent": "PauseMovie"
+    },
+    {
+      "intent": "UnPauseMovie"
+    },
+    {
+      "intent": "WhatToWatch",
+      "slots": [
+        {
+          "name": "Genre",
+          "type": "Movie_Genre"
+        }
+      ]
+    },
+    {
+      "intent": "WhatToWatchUnwatched"
+    },
+    {
+      "intent": "TurnOnTv"
+    },
+    {
+      "intent": "TurnUpVolume"
+    },
+       {
+      "intent": "TurnDownVolume"
+    },
     {
       "intent": "AMAZON.HelpIntent"
     }

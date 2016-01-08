@@ -24,9 +24,29 @@ UnPauseMovie unpause the movie
 UnPauseMovie unpause
 
 WhatToWatch what should I watch
+WhatToWatch what to watch
 WhatToWatch what I should watch
 WhatToWatch for a movie to watch
 WhatToWatch pick a movie
 WhatToWatch pick me a movie
 WhatToWatch choose a movie
 WhatToWatch choose me a movie
+
+WhatToWatchUnwatched an unwatched movie
+WhatToWatchUnwatched an unseen movie
+WhatToWatchUnwatched a movie I haven't seen
+WhatToWatchUnwatched a movie I have not seen
+WhatToWatchUnwatched a movie I haven't watched
+WhatToWatchUnwatched a movie I have not watched
+
+TurnOnTv turn on the tv
+TurnOnTv turn off the tv 
+
+TurnUpVolume turn up the volume
+TurnUpVolume turn it up
+TurnUpVolume make it louder
+
+
+TurnDownVolume turn down the volume
+TurnDownVolume turn it down
+TurnDownVolume make it quieter

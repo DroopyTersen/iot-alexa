@@ -2,8 +2,57 @@ var droopyHttp = new (require("droopy-http"))();
 var utils = require("./utils");
 var urls = require("./urls")
 
+var whatToWatch = function(intent, done, url) {
+    droopyHttp.getJSON(url, true)
+        .then(function (movies) {
+            var movie = utils.getRandomItem(movies);
+            var speechOutput = ("How about " + movie.title + "?");
+            console.log(speechOutput);
+            done(speechOutput);
+        });
+};
 
 var handlers = {
+    "TurnOnTv": function(intent, done) {
+        var iotEvent = {
+            type: "remote-macro",
+            payload: { macro: "togglePower" },
+            target: "tonyk"
+        };
+        utils.iotTrigger(iotEvent, done);
+    },
+    "TurnUpVolume": function(intent, done) {
+        var iotEvent = {
+            type: "remote-macro",
+            payload: { macro: "turnUp" },
+            target: "tonyk"
+        };
+        utils.iotTrigger(iotEvent, done);
+    },
+    "TurnDownVolume": function(intent, done) {
+        var iotEvent = {
+            type: "remote-macro",
+            payload: { macro: "turnDown" },
+            target: "tonyk"
+        };
+        utils.iotTrigger(iotEvent, done);
+    },
+    // "TurnOnAndPlay": function(intent, done) {
+    //     var iotEvent = {
+    //         type: "remote-macro",
+    //         payload: { macro: "togglePower" },
+    //         target: "tonyk"
+    //     };
+    //     utils.iotTrigger(iotEvent, done);
+    //     var title = utils.getSlot("Title", intent);
+    //     var iotEvent = {
+    //         type: "play-movie",
+    //         payload: { title: title },
+    //         target: utils.getTarget(intent)
+            
+    //     };
+    //     utils.iotTrigger(iotEvent, done);
+    // },
     "RecentMovies": function (intent, done) {
         droopyHttp.getJSON(urls.recentMovies, true)
             .then(function (movies) {
@@ -14,13 +63,10 @@ var handlers = {
             });
     },
     "WhatToWatch": function(intent, done) {
-        droopyHttp.getJSON(urls.unwatched, true)
-            .then(function (movies) {
-                var movie = utils.getRandomItem(movies);
-                var speechOutput = ("How about " + movie.title + "?");
-                console.log(speechOutput);
-                done(speechOutput);
-            });
+        whatToWatch(intent, done, urls.allMovies);
+    },
+    "WhatToWatchUnwatched": function(intent, done) {
+        whatToWatch(intent, done, urls.unwatched);
     },
     "Stats": function (intent, done) {
         droopyHttp.getJSON(urls.stats, true).then(function (stats) {
