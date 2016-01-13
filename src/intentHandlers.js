@@ -1,6 +1,7 @@
 var droopyHttp = new (require("droopy-http"))();
 var utils = require("./utils");
 var urls = require("./urls")
+var powerRouter = require("./powerRouter");
 
 var whatToWatch = function(intent, done, url) {
     droopyHttp.getJSON(url, true)
@@ -13,13 +14,11 @@ var whatToWatch = function(intent, done, url) {
 };
 
 var handlers = {
-    "TurnOnTv": function(intent, done) {
-        var iotEvent = {
-            type: "remote-macro",
-            payload: { macro: "togglePower" },
-            target: "tonyk"
-        };
-        utils.iotTrigger(iotEvent, done);
+    "TogglePower": function (intent, done) {
+        var iotEvent = powerRouter(intent);
+        if (iotEvent) {
+            utils.iotTrigger(iotEvent, done);
+        }
     },
     "TurnUpVolume": function(intent, done) {
         var iotEvent = {
@@ -37,22 +36,6 @@ var handlers = {
         };
         utils.iotTrigger(iotEvent, done);
     },
-    // "TurnOnAndPlay": function(intent, done) {
-    //     var iotEvent = {
-    //         type: "remote-macro",
-    //         payload: { macro: "togglePower" },
-    //         target: "tonyk"
-    //     };
-    //     utils.iotTrigger(iotEvent, done);
-    //     var title = utils.getSlot("Title", intent);
-    //     var iotEvent = {
-    //         type: "play-movie",
-    //         payload: { title: title },
-    //         target: utils.getTarget(intent)
-            
-    //     };
-    //     utils.iotTrigger(iotEvent, done);
-    // },
     "RecentMovies": function (intent, done) {
         droopyHttp.getJSON(urls.recentMovies, true)
             .then(function (movies) {

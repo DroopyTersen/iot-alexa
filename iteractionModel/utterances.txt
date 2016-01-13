@@ -39,14 +39,20 @@ WhatToWatchUnwatched a movie I have not seen
 WhatToWatchUnwatched a movie I haven't watched
 WhatToWatchUnwatched a movie I have not watched
 
-TurnOnTv turn on the tv
-TurnOnTv turn off the tv 
 
 TurnUpVolume turn up the volume
 TurnUpVolume turn it up
 TurnUpVolume make it louder
+TurnUpVolume louder
 
 
 TurnDownVolume turn down the volume
 TurnDownVolume turn it down
 TurnDownVolume make it quieter
+TurnDownVolume quieter
+
+TogglePower turn {State} my {Item}
+TogglePower turn {State} the {Item}
+TogglePower turn {State}
+TogglePower power {State} the {Item}
+TogglePower power {State} my {Item}
