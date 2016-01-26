@@ -11,6 +11,7 @@
   "dependencies": {
     "droopy-http": "0.0.1",
     "droopy-iot": "^1.0.0",
+    "object-assign": "^4.0.1",
     "request": "^2.67.0"
   }
 }

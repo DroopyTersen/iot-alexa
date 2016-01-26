@@ -56,3 +56,15 @@ TogglePower turn {State} the {Item}
 TogglePower turn {State}
 TogglePower power {State} the {Item}
 TogglePower power {State} my {Item}
+
+SwitchInput switch to {Input}
+SwitchInput switch to the {Input}
+SwitchInput change input to {Input}
+SwitchInput change input to the {Input}
+SwitchInput set input to {Input}
+SwitchInput set input to the {Input}
+
+LaunchChrome open {Website}
+LaunchChrome launch {Website}
+
+SearchChrome search {Website} for {Search}

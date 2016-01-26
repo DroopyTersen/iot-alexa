@@ -25,15 +25,16 @@ var items = {
 
 var route = function(intent) {
 	var itemKey = utils.getSlot("Item", intent).toLowerCase();
-	var event = items[itemKey];
+	// I previously had this:
+	/// var event = items[itemKey] 
+	var event = JSON.parse(JSON.stringify(items[itemKey]));
 
 	var state = utils.getSlot("State", intent).toLowerCase();
+
 	if (event && event.payload.command && state === "off") {
 		event.payload.command = "turnOff";
 
 	}
-	event.payload.intent = intent;
-	event.payload.state = state;
 	return event && state ? event : null;
 }
 

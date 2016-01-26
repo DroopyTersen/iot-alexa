@@ -20,6 +20,21 @@
         "type": "Movie_Genre"
       }]
     },{
+      "intent": "LaunchChrome",
+      "slots": [{
+        "name": "Website",
+        "type": "Website"
+      }]
+    },{
+      "intent": "SearchChrome",
+      "slots": [{
+        "name": "Website",
+        "type": "Website"
+      }, {
+        "name": "Search",
+        "type": "Search_Value"
+        }]
+    }, {
       "intent": "TogglePower",
       "slots": [{
         "name": "Item",
@@ -30,6 +45,12 @@
         }]
     },    {
       "intent": "WhatToWatchUnwatched"
+    }, {
+      "intent": "SwitchInput",
+      "slots": [{
+        "name": "Input",
+        "type": "Soundbar_Input"
+      }]
     }, {
       "intent": "TurnUpVolume"
     }, {

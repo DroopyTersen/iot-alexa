@@ -2,6 +2,8 @@ var droopyHttp = new (require("droopy-http"))();
 var utils = require("./utils");
 var urls = require("./urls")
 var powerRouter = require("./powerRouter");
+var inputMapper = require("./inputMapper");
+var chrome = require("./chromeHandler");
 
 var whatToWatch = function(intent, done, url) {
     droopyHttp.getJSON(url, true)
@@ -14,6 +16,24 @@ var whatToWatch = function(intent, done, url) {
 };
 
 var handlers = {
+    "LaunchChrome": function(intent, done) {
+        var iotEvent = chrome.launch(intent);
+        if (iotEvent) {
+            utils.iotTrigger(iotEvent, done);
+        }
+    },
+    "SearchChrome": function(intent, done) {
+        var iotEvent = chrome.search(intent);
+        if (iotEvent) {
+            utils.iotTrigger(iotEvent, done);
+        }
+    },
+    "SwitchInput": function(intent, done) {
+        var iotEvent = inputMapper(intent);
+        if (iotEvent) {
+            utils.iotTrigger(iotEvent, done);
+        }
+    },
     "TogglePower": function (intent, done) {
         var iotEvent = powerRouter(intent);
         if (iotEvent) {
